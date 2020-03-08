@@ -149,5 +149,11 @@ namespace Ordenes.UI.Registros
             Detalle.RemoveAt(DetalleDataGrid.FrozenColumnCount);
             CargarGrid();
         }
+
+        private void ConsultaButton_Click(object sender, RoutedEventArgs e)
+        {
+            ROConsulta consulta = new ROConsulta();
+            consulta.Show();
+        }
     }
 }

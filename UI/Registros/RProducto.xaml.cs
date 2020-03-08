@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Ordenes.BLL;
 using Ordenes.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Ordenes.UI.Registros;
 
 namespace Ordenes.UI.Registros
 {
@@ -108,6 +109,12 @@ namespace Ordenes.UI.Registros
                 MessageBox.Show("Persona no Encontrada");
                 
             }
+        }
+
+        private void ConsultaButton_Click(object sender, RoutedEventArgs e)
+        {
+            RPConsulta rPConsulta = new RPConsulta();
+            rPConsulta.Show();
         }
     }
 }

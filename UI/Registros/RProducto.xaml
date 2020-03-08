@@ -70,10 +70,11 @@
 
 
 
-        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="7,0,0,0" Grid.Row="4" VerticalAlignment="Center" Height="25" Width="51" Grid.Column="1" Background="#FFE86D18" Click="NuevoButton_Click" />
-        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Bottom" Height="25" Width="51" Grid.Column="1" Background="#FF0C74B0" Margin="0,0,0,9" Click="GuardarButton_Click"/>
-        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="137,8,0,9" Grid.Row="4" Width="51" Grid.Column="1" Background="#FFD60D29" Click="EliminarButton_Click"/>
+        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="13,7,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="51" Background="#FFE86D18" Click="NuevoButton_Click" />
+        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Height="25" Width="51" Grid.Column="1" Background="#FF0C74B0" Margin="25,0,0,0" Click="GuardarButton_Click"/>
+        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="109,8,0,9" Grid.Row="4" Width="51" Grid.Column="1" Background="#FFD60D29" Click="EliminarButton_Click"/>
         <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="51" Grid.Column="2" Background="#FF2CC3AF" Click="BuscarButton_Click"/>
+        <Button x:Name="ConsultaButton" Content="Consulta" Grid.Column="2" HorizontalAlignment="Left" Height="27" Grid.Row="4" VerticalAlignment="Center" Width="54" Background="#FF8B2E8F" Click="ConsultaButton_Click" Margin="5,0,0,0"/>
 
 
 

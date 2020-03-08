@@ -68,6 +68,7 @@
         <DataGrid x:Name="DetalleDataGrid" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="222" Grid.Row="4" VerticalAlignment="Center" Width="314" Margin="3,0,0,0"/>
         <Button x:Name="AgregarButton" Content="+" Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="11,0,0,3" Grid.Row="2" VerticalAlignment="Bottom" Width="53" Background="#FF1F3EA4" Click="AgregarButton_Click"/>
         <Button x:Name="RemoverButton" Content="Remover" HorizontalAlignment="Center" Height="22" Margin="0,1,0,0" Grid.Row="5" VerticalAlignment="Top" Width="63" Grid.Column="2" Background="#FF6C483A" Click="RemoverButton_Click"/>
+        <Button x:Name="consultaButton" Content="Consulta" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="68" Background="#FF47648D" Click="ConsultaButton_Click"/>
 
     </Grid>
 </Window>
