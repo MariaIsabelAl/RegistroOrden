@@ -61,14 +61,6 @@ namespace Ordenes.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete FROM OrdenDetalle Where ProductoId={producto.ProductoId}");
-                foreach (var item in producto.OrdenDetalle)
-                {
-
-                    contexto.Entry(item).State = EntityState.Added;
-                }
-
-
                 contexto.Entry(producto).State = EntityState.Modified;
                 paso = (contexto.SaveChanges() > 0);
             }

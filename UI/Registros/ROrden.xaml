@@ -29,6 +29,7 @@
         <TextBlock Name="OrdenIdLabel" Text="OrdenId" Margin="5,5,5,5" />
         <TextBlock Name="FechaLabel" Text= "Fecha" Grid.Row="1" Margin="5,5,5,5" />
         <TextBlock Name="CantidadLabel" Text="Cantidad" Grid.Row="2" Margin="5,5,5,5" />
+        <TextBlock Name="ProductoIdLabel" Text="ProductoId" Grid.Row="3" Margin="5,5,5,5" />
 
 
         <TextBox Name="OrdenIdTextBox"  Grid.Column="1" Margin="5,5,5,5" Foreground="Red">
@@ -47,7 +48,16 @@
         </DatePicker>
         <TextBox Name="CantidadTextBox" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" Foreground="Red">
             <TextBox.Text>
-                <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"  >
+                <Binding Path="OrdenDetalle.Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"  >
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Name="ProductoIdTextBox" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" Foreground="Red">
+            <TextBox.Text>
+                <Binding Path="OrdenDetalle.ProductoId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"  >
                     <Binding.ValidationRules>
                         <ExceptionValidationRule />
                     </Binding.ValidationRules>
@@ -59,15 +69,18 @@
 
 
 
-
-        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="45,2,0,0" Grid.Row="5" VerticalAlignment="Top" Height="26" Width="51" Background="#FFE86D18" Grid.ColumnSpan="2" Click="NuevoButton_Click" />
-        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="52,2,0,0" Grid.Row="5" VerticalAlignment="Top" Height="26" Width="51" Grid.Column="1" Background="#FF0C74B0" Click="GuardarButton_Click"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="115,2,0,0" Grid.Row="5" VerticalAlignment="Top" Height="27" Width="51" Grid.Column="1" Background="#FFD60D29" Click="EliminarButton_Click"/>
+        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="45,210,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="51" Background="#FFE86D18" Grid.ColumnSpan="2" Click="NuevoButton_Click" Grid.RowSpan="2" />
+        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="52,210,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="51" Grid.Column="1" Background="#FF0C74B0" Click="GuardarButton_Click" Grid.RowSpan="2"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="115,209,0,0" Grid.Row="4" VerticalAlignment="Top" Height="27" Width="51" Grid.Column="1" Background="#FFD60D29" Click="EliminarButton_Click" Grid.RowSpan="2"/>
         <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="6,0,0,2" Width="51" Grid.Column="2" Background="#FF2CC3AF" Height="25" VerticalAlignment="Bottom" Click="BuscarButton_Click"/>
         <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="118,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="0" Height="20" Grid.RowSpan="2"/>
-        <DataGrid x:Name="DetalleDataGrid" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="222" Grid.Row="4" VerticalAlignment="Center" Width="314" Margin="3,0,0,0"/>
+        <DataGrid x:Name="DetalleDataGrid" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="188" Grid.Row="4" VerticalAlignment="Top" Width="314" Margin="5,4,0,0">
+            <DataGrid.ItemsSource>
+                <Binding Path="OrdenDetalle" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
+            </DataGrid.ItemsSource>
+        </DataGrid>
         <Button x:Name="AgregarButton" Content="+" Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="11,0,0,3" Grid.Row="2" VerticalAlignment="Bottom" Width="53" Background="#FF1F3EA4" Click="AgregarButton_Click"/>
-        <Button x:Name="RemoverButton" Content="Remover" HorizontalAlignment="Center" Height="22" Margin="0,1,0,0" Grid.Row="5" VerticalAlignment="Top" Width="63" Grid.Column="2" Background="#FF6C483A" Click="RemoverButton_Click"/>
+        <Button x:Name="RemoverButton" Content="Remover" HorizontalAlignment="Center" Height="22" Grid.Row="4" VerticalAlignment="Top" Width="63" Grid.Column="2" Background="#FF6C483A" Click="RemoverButton_Click" Margin="0,203,0,0" Grid.RowSpan="2"/>
         <Button x:Name="consultaButton" Content="Consulta" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="68" Background="#FF47648D" Click="ConsultaButton_Click"/>
 
     </Grid>

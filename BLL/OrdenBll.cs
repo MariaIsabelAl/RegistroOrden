@@ -34,15 +34,15 @@ namespace Ordenes.BLL
             return paso;
         }
 
-        public static Orden Buscar(int id)//            buscar por id
+        public static Orden Buscar(int id)//            buscar
         {
             Contexto contexto = new Contexto();
             Orden orden = new Orden();
 
             try
             {
-                orden = contexto.Orden.Where(p => p.OrdenId == id)
-                    .Include(x => x.OrdenDetalle)
+                orden = contexto.Orden.Include(x => x.OrdenDetalle)
+                    .Where(p => p.OrdenId == id)
                     .SingleOrDefault();
 
             }

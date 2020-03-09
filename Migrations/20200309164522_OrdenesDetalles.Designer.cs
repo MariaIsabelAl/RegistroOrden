@@ -9,8 +9,8 @@ using Ordenes.DAL;
 namespace Ordenes.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200308195322_Ordenes")]
-    partial class Ordenes
+    [Migration("20200309164522_OrdenesDetalles")]
+    partial class OrdenesDetalles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

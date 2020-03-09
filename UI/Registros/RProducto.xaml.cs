@@ -26,14 +26,16 @@ namespace Ordenes.UI.Registros
             InitializeComponent();
             this.DataContext = producto;
             ProductoIdTextBox.Text = "0";
+            PrecioTextBox.Text = "0";
+            InventarioTextBox.Text ="0";
         }
 
         private void Limpiar()
         {
-            ProductoIdTextBox.Text = string.Empty;
+            ProductoIdTextBox.Text = "0";
             NombreTextBox.Text = string.Empty;
-            PrecioTextBox.Text = string.Empty;
-            InventarioTextBox.Text = string.Empty;
+            PrecioTextBox.Text = "0";
+            InventarioTextBox.Text = "0";
            
         }
 

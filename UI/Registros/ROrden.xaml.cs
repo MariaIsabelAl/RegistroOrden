@@ -26,26 +26,20 @@ namespace Ordenes.UI.Registros
             InitializeComponent();
             this.DataContext = orden;
             OrdenIdTextBox.Text = "0";
-            this.Detalle = new List<OrdenDetalle>();
+            
         }
 
         private void Limpiar()
         {
-            OrdenIdTextBox.Text = string.Empty;
+            OrdenIdTextBox.Text = "0";
             FechaDatePickerTextBox.Text = Convert.ToString(DateTime.Now);
 
-            this.Detalle = new List<OrdenDetalle>();
-            CargarGrid();
+            DetalleDataGrid.ItemsSource = new List<OrdenDetalle>();
+            Actualizar();
 
         }
 
-        private void CargarGrid()
-        {
-            DetalleDataGrid.ItemsSource = null;
-            DetalleDataGrid.ItemsSource = this.Detalle;
-        }
-
-
+       
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
@@ -112,7 +106,6 @@ namespace Ordenes.UI.Registros
             if (anterior != null)
             {
                 orden = anterior;
-                CargarGrid();
                 Actualizar();
             }
             else
@@ -124,30 +117,21 @@ namespace Ordenes.UI.Registros
 
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
         {
-            RProducto rProducto = new RProducto();
-            if (DetalleDataGrid.ItemsSource != null)
-                this.Detalle = (List<OrdenDetalle>)DetalleDataGrid.ItemsSource;
-
-            this.Detalle.Add(new OrdenDetalle
-            {
-                OrdenId = Convert.ToInt32(OrdenIdTextBox.Text),
-                ProductoId = Convert.ToInt32(rProducto.ProductoIdTextBox.Text),
-                Cantidad = CantidadTextBox.Text
-
-
-            });
-            CargarGrid();
-            int cantidad = Convert.ToInt32(CantidadTextBox.Text);
-            int id = Convert.ToInt32(rProducto.ProductoIdTextBox.Text);
+            orden.OrdenDetalle.Add(new OrdenDetalle(Convert.ToInt32(OrdenIdTextBox.Text), Convert.ToInt32(ProductoIdTextBox.Text), Convert.ToInt32(CantidadTextBox.Text)));
+            Actualizar();
+            OrdenDetalle ordenDetalle = new OrdenDetalle();
+            int cantidad = ordenDetalle.Cantidad;
+            int id = ordenDetalle.ProductoId;
             ProductoBll.Calculo(id, cantidad);
-            CantidadTextBox.Focus();
             CantidadTextBox.Clear();
+            ProductoIdTextBox.Clear();
+            CantidadTextBox.Focus();
         }
 
         private void RemoverButton_Click(object sender, RoutedEventArgs e)
         {
             Detalle.RemoveAt(DetalleDataGrid.FrozenColumnCount);
-            CargarGrid();
+            Actualizar();
         }
 
         private void ConsultaButton_Click(object sender, RoutedEventArgs e)

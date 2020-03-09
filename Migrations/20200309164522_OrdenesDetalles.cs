@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Ordenes.Migrations
 {
-    public partial class Ordenes : Migration
+    public partial class OrdenesDetalles : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,9 +41,9 @@ namespace Ordenes.Migrations
                 {
                     OrdenDetalleId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ProductoId = table.Column<int>(nullable: false),
                     OrdenId = table.Column<int>(nullable: false),
-                    Cantidad = table.Column<string>(nullable: false)
+                    ProductoId = table.Column<int>(nullable: false),
+                    Cantidad = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
