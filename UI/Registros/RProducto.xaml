@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ordenes.UI.Registros"
+        xmlns:m="clr-namespace:Ordenes.Validacion"
         mc:Ignorable="d"
         Title="Producto" Height="200" Width="350">
     <Grid Name="ProductoMainGrid" Margin="11,0,8,0" Height="160" >
@@ -31,7 +32,7 @@
         <TextBlock Name="PrecioLabel" Text="Precio" Grid.Row="2" Margin="5,5,5,5" Grid.RowSpan="3" />
         <TextBlock Name="InventarioLabel" Text="Inventario" Grid.Row="3" Margin="5,5,5,5" Grid.RowSpan="2" />
 
-        <TextBox Name="ProductoIdTextBox"  Grid.Column="1" Margin="5,5,5,5" Foreground="Red">
+        <TextBox Name="ProductoIdTextBox"  Grid.Column="1" Margin="5,5,5,5" Foreground="Blue">
             <TextBox.Text>
                 <Binding Path="ProductoId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" >
                     <Binding.ValidationRules>
@@ -40,35 +41,35 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Name="NombreTextBox" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" Foreground="Red">
+        <TextBox Name="NombreTextBox" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" Foreground="Blue">
             <TextBox.Text>
                 <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged"  Mode="TwoWay"  >
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <m:ValidacionProducto x:Name="validacionnombre" ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Name="PrecioTextBox" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" Foreground="Red"  >
+        <TextBox Name="PrecioTextBox" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" Foreground="Blue"  >
             <TextBox.Text>
                 <Binding Path="Precio" UpdateSourceTrigger="PropertyChanged"  Mode="TwoWay">
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <m:ValidacionPrecio x:Name="validacionprecio" ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Name="InventarioTextBox" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" Foreground="Red"  >
+        <TextBox Name="InventarioTextBox" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" Foreground="Blue"  >
             <TextBox.Text>
                 <Binding Path="Inventario" UpdateSourceTrigger="PropertyChanged"  Mode="TwoWay">
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <m:ValidacionInventario x:Name="validacioninventario" ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
 
-
+        
 
         <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="13,7,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="51" Background="#FFE86D18" Click="NuevoButton_Click" />
         <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Height="25" Width="51" Grid.Column="1" Background="#FF0C74B0" Margin="25,0,0,0" Click="GuardarButton_Click"/>
