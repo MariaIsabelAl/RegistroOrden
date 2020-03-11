@@ -5,19 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ordenes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="255">
+        Title="MainWindow" Height="100" Width="255">
     <Grid >
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-
+            <ColumnDefinition Width="*" />
+           
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
-        <Button x:Name="ProductoButton" Content="Producto" HorizontalAlignment="Left" Height="26" Margin="100,28,0,0" VerticalAlignment="Top" Width="66" Background="#FF07A207" Click="ProductoButton_Click"/>
-        <Button x:Name="OrdenButton" Content="Orden" HorizontalAlignment="Left" Height="26" Margin="100,75,0,0" VerticalAlignment="Top" Width="66" Background="#FF28C7C7" Click="OrdenButton_Click"/>
+        <StackPanel Orientation="Horizontal" >
+            <Button x:Name="ProductoButton" Content="Producto"  HorizontalContentAlignment="Right"  Width="104"  Click="ProductoButton_Click" Height="34">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/icons8-registro-de-eventos-64.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="OrdenButton" Content="Orden" HorizontalContentAlignment="Center"  Width="102" Click="OrdenButton_Click" Height="34">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/icons8-orden-de-compra-64.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+
 
 
     </Grid>

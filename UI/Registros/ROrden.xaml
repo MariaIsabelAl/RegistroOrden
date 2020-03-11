@@ -74,19 +74,46 @@
 
 
 
-        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="45,203,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="51" Background="#FFE86D18" Grid.ColumnSpan="2" Click="NuevoButton_Click" Grid.RowSpan="2" />
-        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="48,202,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="51" Grid.Column="1" Background="#FF0C74B0" Click="GuardarButton_Click" Grid.RowSpan="2"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="115,202,0,0" Grid.Row="4" VerticalAlignment="Top" Height="27" Width="51" Grid.Column="1" Background="#FFD60D29" Click="EliminarButton_Click" Grid.RowSpan="2"/>
-        <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="10,0,0,0" Width="51" Grid.Column="2" Background="#FF2CC3AF" Height="25" VerticalAlignment="Center" Click="BuscarButton_Click"/>
-        <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="118,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="0" Height="20" Grid.RowSpan="2"/>
+        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="9,203,0,0" Grid.Row="4"  Height="26" Width="72"  Click="NuevoButton_Click" FontWeight="Bold"  >
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-crear-nuevo-64.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="9,202,0,1" Grid.Row="4" Height="26" Width="76" Grid.Column="1"  Click="GuardarButton_Click" FontWeight="Bold" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-guardar-64.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Eliminar" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="97,201,0,1" Grid.Row="4"  Height="27" Width="70" Grid.Column="1"  Click="EliminarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-eliminar-64.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="1,1,0,2" Width="63" Grid.Column="2" Height="25"  Click="BuscarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-buscar-trabajo-correspondiente-64.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
+        </Button>
+
         <DataGrid x:Name="DetalleDataGrid" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="188" Grid.Row="4" VerticalAlignment="Top" Width="314" Margin="5,4,0,0">
             <DataGrid.ItemsSource>
                 <Binding Path="OrdenDetalle" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" />
             </DataGrid.ItemsSource>
         </DataGrid>
-        <Button x:Name="AgregarButton" Content="+" Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="11,0,0,3" Grid.Row="2" VerticalAlignment="Bottom" Width="53" Background="#FF1F3EA4" Click="AgregarButton_Click"/>
-        <Button x:Name="RemoverButton" Content="Remover" HorizontalAlignment="Center" Height="22" Grid.Row="4" VerticalAlignment="Top" Width="63" Grid.Column="2" Background="#FF6C483A" Click="RemoverButton_Click" Margin="0,197,0,0"/>
-        <Button x:Name="consultaButton" Content="Consulta" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="68" Background="#FF47648D" Click="ConsultaButton_Click"/>
-
+        <Button x:Name="AgregarButton" Content="Agregar" Grid.Column="1" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="22" Margin="168,1,0,5" Grid.Row="2"  Width="69"  Click="AgregarButton_Click" FontWeight="Bold" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-mas-64.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="RemoverButton" Content="Remover" HorizontalAlignment="Center" Height="22" Grid.Row="4" VerticalAlignment="Top" Width="63" Grid.Column="2" Click="RemoverButton_Click" Margin="0,197,0,0" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="consultaButton" Content="Consulta" Grid.Column="1" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="23" Margin="167,6,0,6" Grid.Row="1" Width="71" Click="ConsultaButton_Click" FontWeight="Bold" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-historial-de-pedidos-64.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -15,8 +15,9 @@
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" MinWidth="190"  />
+            <ColumnDefinition Width="Auto" MinWidth="177"  />
             <ColumnDefinition />
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -69,13 +70,35 @@
             </TextBox.Text>
         </TextBox>
 
-        
 
-        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="13,7,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="51" Background="#FFE86D18" Click="NuevoButton_Click" />
-        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Height="25" Width="51" Grid.Column="1" Background="#FF0C74B0" Margin="25,0,0,0" Click="GuardarButton_Click"/>
-        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="109,8,0,9" Grid.Row="4" Width="51" Grid.Column="1" Background="#FFD60D29" Click="EliminarButton_Click"/>
-        <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="51" Grid.Column="2" Background="#FF2CC3AF" Click="BuscarButton_Click"/>
-        <Button x:Name="ConsultaButton" Content="Consulta" Grid.Column="2" HorizontalAlignment="Left" Height="27" Grid.Row="4" VerticalAlignment="Center" Width="54" Background="#FF8B2E8F" Click="ConsultaButton_Click" Margin="5,0,0,0"/>
+
+        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Margin="0,12,0,5" Grid.Row="4" Width="65"  Click="NuevoButton_Click" FontWeight="Bold" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-crear-nuevo-64.png" Stretch="Uniform" AlignmentX="Left" />
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="GuardarButton" Content="Guardar" HorizontalAlignment="Left" Grid.Row="4" HorizontalContentAlignment="Right" Width="70" Grid.Column="1"  Margin="9,12,0,5" Click="GuardarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-guardar-64.png" Stretch="Uniform" AlignmentX="Left" />
+            </Button.Background>
+        </Button>
+        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalContentAlignment="Right" Margin="87,12,20,5" Grid.Row="4" Grid.Column="1" Click="EliminarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-eliminar-64.png" AlignmentX="Left" Stretch="Uniform" />
+            </Button.Background>
+        </Button>
+        <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Width="65" Grid.Column="2"  Click="BuscarButton_Click" Margin="0,1,0,2" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-buscar-trabajo-correspondiente-64.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ConsultaButton" Content="Consulta" Grid.Column="1" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Grid.Row="4"  Width="77" Click="ConsultaButton_Click" Margin="164,12,0,3" FontWeight="Bold" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/icons8-historial-de-pedidos-64.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
 
 
 
